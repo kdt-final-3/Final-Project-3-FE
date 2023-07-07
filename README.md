@@ -86,11 +86,13 @@
 ### 이은영
 
 - 채용 폼 작성
-  - zod, react-hook-form을 활용해 모든 입력값에 대한 유효성 검사를 진행합니다.
+  - 신규로 채용 폼 생성 
+  - 비제어 컴포넌트 React-hook-form 라이브러리를 사용하여, 불필요한 렌더링과 연산 감소 및 간결한 코드를 작성
+  - 사용자가 값을 입력하자마자 즉각적으로 에러 문구를 출력하기로 했고, 이를 위해 실시간으로 값을 갱신해 주는 React-hook-form 의 onChange mode 를 사용하였습니다.  이를 통해 사용자가 submit 버튼을 누르기 전에 입력값이 유효한지 검사해줘, UX 친화적으로 구현할 수 있었습니다. 
+  - 입력값의 복잡한 유효성 검증은 Zod 라이브러리를 사용해 간단하게 처리했고, Typescript 와 함께 사용함으로써 타입의 안정성을 향상시켰습니다.
+  - 폼의 중복 제출을 방지하기 위해, 버튼의 disabled 속성에 현재 제출 중인 상태인지 아닌지를 알아낼 수 있는 isSubmitting 값을 설정해 주었습니다.
   - 나가기 및 삭제 클릭시 채용폼관리 메인으로 이동합니다.
   - 작성완료 클릭시 api 호출돼 폼이 서버로 저장됩니다. 그 후 모달창이 뜨고 링크복사를 하거나 지원서로 이동할 수 있습니다.
-- 기업 정보 변경
-  - 전화번호와 비밀번호를 변경할 수 있습니다.
 - 지원자 인증 및 작성
   - 지원자 인증
     -  zod, react-hook-form을 활용하여 이름, 휴대전화, 이메일, 인증번호 유효성 검사를 진행하고 오류시 에러메시지를 표시합니다.
@@ -104,6 +106,8 @@
     - zod, react-hook-form을 활용하여 모든 입력값에 대한 유효성 검사를 진행합니다.
     - submit 했을 때 모두 입력해야 다음 페이지로 이동합니다.
     - 스크롤의 움직임에 따라 사이드바가 움직입니다.
+- 기업 정보 변경
+  - 전화번호와 비밀번호를 변경할 수 있습니다.
 
 ### 이혜란
 
@@ -163,7 +167,123 @@
 - FE & UXUI: 피그마, 제플린
 - FE & BE: 깃헙, 포스트맨
 
-# 5. **회고**
+# 5. 구현 내용 시연
+<details>
+<summary>1. 회원가입, 비밀번호 찾기</summary>
+
+![1 1 인증_회원가입](https://github.com/kdt-final-3/jobkok-fe/assets/90189513/c0dfdcc6-7689-4999-a05d-780ecd4dfc34)
+![1 2 인증_비밀번호 찾기](https://github.com/kdt-final-3/jobkok-fe/assets/90189513/ef1657ad-35d3-45a3-a12c-a96c4d1fdacf)
+
+<br>
+</details>
+
+<details>
+<summary>2. 로그인, 로그아웃</summary>
+
+![1 3 인증_로그인](https://github.com/kdt-final-3/jobkok-fe/assets/90189513/0da2110e-2ccb-4f38-ac44-0dc69e1f5f48)
+![7 5 로그아웃](https://github.com/kdt-final-3/jobkok-fe/assets/90189513/4aeff2a5-0828-4dc3-b969-007e3736d086)
+
+<br>
+</details>
+
+<details>
+<summary>3. 폼링크 관리</summary>
+
+![3 1 폼링크_진입](https://github.com/kdt-final-3/jobkok-fe/assets/90189513/5ef25dd7-9ce0-4bf8-b0f4-9b15786dbfa1)
+![3 2 폼링크_타기업폼](https://github.com/kdt-final-3/jobkok-fe/assets/90189513/9a526721-5c09-43f1-a5e5-c93553b9de13)
+![3 7-폼링크_검색_2](https://github.com/kdt-final-3/jobkok-fe/assets/90189513/ba1eb6c6-280b-4f95-88eb-df5c995bf123)
+
+<br>
+</details>
+
+<details>
+<summary>4. 폼작성</summary>
+  
+![3 3 폼작성_진입](https://github.com/kdt-final-3/jobkok-fe/assets/90189513/0896698d-5746-46cf-9be5-16a2fdf8245f)
+![3 4 폼작성_데이트피커](https://github.com/kdt-final-3/jobkok-fe/assets/90189513/2bb3d03d-ce51-4ed9-b7c6-19b120127e86)
+![3 5 폼작성_작성과정](https://github.com/kdt-final-3/jobkok-fe/assets/90189513/1a03c02a-b056-4028-bf0f-f5dc4099d57c)
+![3 6 폼작성_작성완료](https://github.com/kdt-final-3/jobkok-fe/assets/90189513/d18db939-a081-499a-a606-0cbb5d03549f)
+
+<br>
+</details>
+
+<details>
+<summary>5. 지원자 인증 </summary>
+
+![4 1 지원자인증_인증성공](https://github.com/kdt-final-3/jobkok-fe/assets/90189513/89592563-0ab9-4bcc-8bab-da920dfd1b0d)
+![4 2 지원자인증_미입력](https://github.com/kdt-final-3/jobkok-fe/assets/90189513/367ae945-2f0a-46a6-b613-e674f315bd43)
+
+<br>
+</details>
+
+<details>
+<summary>6. 지원자 지원서 작성</summary>
+
+![4 3 지원서작성_작성중](https://github.com/kdt-final-3/jobkok-fe/assets/90189513/c98db035-fecd-440c-aaad-c633f4e56b38)
+![4 4 지원서작성_제출](https://github.com/kdt-final-3/jobkok-fe/assets/90189513/43657336-b23d-4d2d-a88e-05d8b86058d1)
+
+<br>
+</details>
+
+<details>
+<summary>7. 인재 관리</summary>
+  
+![2 1 인재 관리 - 인재폼 등록 안한 경우](https://github.com/kdt-final-3/jobkok-fe/assets/90189513/a79e99b9-5500-40f7-b862-1abc36534795)
+![5 1 인재 관리 - 인재폼 등록 지원자 없는 경우](https://github.com/kdt-final-3/jobkok-fe/assets/90189513/cd7ba2d5-521d-4c05-8480-d7d11b4d9b9f)
+![5 2 인재 관리 - 슬라이드](https://github.com/kdt-final-3/jobkok-fe/assets/90189513/b03007de-e0ff-4554-9150-c13753d142e3)
+
+<br>
+</details>
+
+<details>
+<summary>8. 인재 현황</summary>
+
+![5 3 인재 현황 - 칸반](https://github.com/kdt-final-3/jobkok-fe/assets/90189513/19c76d11-f31f-4f64-b672-076b95c976d8)
+![5 4 인재 현황 - 단계별 인재 조회](https://github.com/kdt-final-3/jobkok-fe/assets/90189513/4bc2706c-da2e-4c94-9c5e-8ea5cc7660c5)
+![5 6 인재 현황 - 페이지네이션](https://github.com/kdt-final-3/jobkok-fe/assets/90189513/3b1dbd4a-ed6b-4ecb-9149-de727bbfef1b)
+![5 7 인재 현황 - 단계 수정](https://github.com/kdt-final-3/jobkok-fe/assets/90189513/f1a6f450-3614-4c13-83ca-0134decf8a5a)
+
+<br>
+</details>
+
+<details>
+<summary>9. 인재 상세페이지</summary>
+  
+![6 1 상세 페이지 찜, 면접정보 타임라인](https://github.com/kdt-final-3/jobkok-fe/assets/90189513/0a04a2ca-ffac-45f8-a77d-edc12639d609)
+
+<br>
+</details>
+
+<details>
+<summary>10. 알림 센터</summary>
+  
+![6 2 알림 센터 인재 선택](https://github.com/kdt-final-3/jobkok-fe/assets/90189513/e3030494-ffcc-4e7e-9f8b-82ae55d0b7ae)
+![6 3 알림 센터 채용 단계 필터링](https://github.com/kdt-final-3/jobkok-fe/assets/90189513/a02f17ec-6259-402e-9e9c-9126cd7433e6)
+![6 4 알림 센터 기본 메세지 출력](https://github.com/kdt-final-3/jobkok-fe/assets/90189513/80f6f6f2-2e87-48e1-806e-a42d11edfabc)
+![6 5 알림 센터 메세지 보내기](https://github.com/kdt-final-3/jobkok-fe/assets/90189513/97f5e724-c0bb-436a-b9b7-ad283e922ac5)
+
+<br>
+</details>
+
+<details>
+<summary>11. 탈락 인재</summary>
+  
+![7 1 탈락 인재  - 탈락 인재 없을 시](https://github.com/kdt-final-3/jobkok-fe/assets/90189513/97c27ac3-b668-42fe-a935-8eb9fedb96d9)
+![7 2 탈락 인재  - 인재 조회](https://github.com/kdt-final-3/jobkok-fe/assets/90189513/b42ada8a-dfd8-46c2-8e0f-6fa7a48ec7a2)
+
+<br>
+</details>
+
+<details>
+<summary>12. 기업정보 변경</summary>
+  
+![7 3 기업정보_수정](https://github.com/kdt-final-3/jobkok-fe/assets/90189513/d858b9cf-884e-4a48-a02e-4e74fb8458df)
+![7 4 기업정보_계정삭제](https://github.com/kdt-final-3/jobkok-fe/assets/90189513/6cb61079-8076-4d2e-a04b-556cd73f419f)
+
+<br>
+</details>
+
+# 6. **회고**
 
 ### 유지석
 
